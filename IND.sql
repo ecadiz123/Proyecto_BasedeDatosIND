@@ -235,7 +235,7 @@ descomentar pgsql
     ALTER TABLE empleado ADD CONSTRAINT direccion_regional_empleado_fk FOREIGN KEY (direccion_regional) REFERENCES public.direccion_regional(id);--Empleado - direccion regional
     --fk supervisa
     ALTER TABLE supervisa ADD CONSTRAINT supervisa_empleado_fk FOREIGN KEY (rut_empleado) REFERENCES public.empleado(rut) ON DELETE CASCADE;--Empleado - supervisa
-    ALTER TABLE supervisa ADD CONSTRAINT supervisa_programadeporte_fk  FOREIGN KEY (id_programas_deporte) REFERENCES public.programa_deporte(id);-- Progrma deporte - supervisa
+    ALTER TABLE supervisa ADD CONSTRAINT supervisa_programadeporte_fk  FOREIGN KEY (id_programas_deporte) REFERENCES public.programa_deporte(id) ON UPDATE CASCADE;-- Progrma deporte - supervisa
     --fk beneficia
     ALTER TABLE beneficia ADD CONSTRAINT beneficia_fk1 FOREIGN KEY (id_programas_deporte) REFERENCES public.programa_deporte(id);-- Programa deporte - beneficia
     ALTER TABLE beneficia ADD CONSTRAINT beneficia_fk2 FOREIGN KEY (rut_deportista) REFERENCES public.deportista(rut);-- Beneficia - deportista
