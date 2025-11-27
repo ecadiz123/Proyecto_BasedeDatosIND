@@ -30,7 +30,7 @@ echo "<td>Correo:</td>";
 echo '<td><input type="text" name="correo"></td>';
 echo "</tr>";
 //telefono
-echo "<tr>	";
+echo "<tr>";
 echo "<td>Telefono:</td>";
 echo '<td><input type="text" name="telefono"></td>';
 echo "</tr>";
@@ -50,7 +50,7 @@ echo '</select>';
 echo "</td>";
 echo "</tr>";
 
-//direccion regional
+//Area
 echo "<tr>";
 echo "<td>Area:</td>";
 echo '<td><select name="area">';
