@@ -2,7 +2,7 @@
 include 'Conexion.php';
 
 
-if($_POST["rut"]!='' && $_POST["nombre"]!='' && $_POST["telefono"]!='')//si no quedaron vacios
+if($_POST["rut"]!='' && $_POST["nombre"]!='' && $_POST["telefono"]!='' && $_POST["correo"]!='')//si no quedaron vacios
 {
 
     $rut=$_POST["rut"];
@@ -16,7 +16,9 @@ if($_POST["rut"]!='' && $_POST["nombre"]!='' && $_POST["telefono"]!='')//si no q
     //check si rut ya esta ingresado
     $rutcheck_q="select rut from empleado where rut =". $rut .";";
     $rutcheck=pg_query($coneccion,$rutcheck_q);
-    if(pg_num_rows($rutcheck)!=0)// si son mas de 0 filas
+    if($rutcheck)
+    {
+    if(pg_num_rows($rutcheck)!=0)// checkeo si aparece en la base de datos
     {
 	echo '<h3>ERROR EMPLEADO YA ESTA INGRESADO</h3>';
 
@@ -37,11 +39,19 @@ if($_POST["rut"]!='' && $_POST["nombre"]!='' && $_POST["telefono"]!='')//si no q
 
     if($insercion && $insercion2){ //si no hubo problemas con insert
     echo "Guardado con exito, vuelva a atras para continuar.";
+    echo '<a href="IND_empleado_ingresar.php">Volver</a>';
+    
 	}
     else{
 	echo pg_last_error($coneccion);
 	echo "Se ha producido un error al guardar";
+    echo '<a href="IND_empleado_ingresar.php">Volver</a>';
 	}
+    }
+    }else
+    {
+	echo "<h3>Ingresar rut valido</h3>";
+    echo '<a href="IND_empleado_ingresar.php">Volver</a>';
     }
 }else{
 

@@ -89,7 +89,9 @@ echo '<td><input type="submit" value="Ingresar"></td>';
 echo "</tr>";
 
 echo "</form>";
+echo '</table>';
 echo "<hr>";
+echo '<a href="IND_empleados.html">Volver</a>';
 echo "</body>";
 
 echo "</html>";
