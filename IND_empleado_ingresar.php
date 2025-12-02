@@ -13,10 +13,10 @@ echo "<h3>Ingreso de nuevo Empleado</h3>";
 echo "<p>Ingrese datos de nuevo empleado</p>";
 //form y tabla para ingreso de empleado
 echo '<form id="ingreso_empleado" action="IND_ingreso_empleado_sql.php" method="post">';
-echo "<table> <!-- tabla para el formato-->";
+echo "<table> ";
 //rut
-echo "<tr> <!-- fila tabla -->";
-echo "<td>Rut:</td><!-- td: columna tabla-->";
+echo "<tr> ";
+echo "<td>Rut:</td>";
 echo '<td><input type="text" name="rut"></td>';
 echo "</tr>";
 //nombre
@@ -43,7 +43,7 @@ $regiones_q = "select r.id,r.nombre from region r, direccion_regional dr where d
 $region_result=pg_query($coneccion,$regiones_q);
 while($region_datos = pg_fetch_array($region_result))
 {
-echo '<option value = "'.$region_datos["id"].'">'.$region_datos["nombre"].'</option>';//valor = id region
+    echo '<option value = "'.$region_datos["id"].'">'.$region_datos["nombre"].'</option>';//valor = id region
 
 }
 echo '</select>';
