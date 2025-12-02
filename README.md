@@ -9,3 +9,5 @@
 - Rellenar Conexion.php con los datos para la conexion.
 
 - Acceder a través de un navegador a localhost/**(nombre de la carpeta)**
+
+- Entrar a IND_inicio.html
